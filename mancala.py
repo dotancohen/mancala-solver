@@ -40,5 +40,15 @@ class Board(object):
 
 		return True
 
-b = Board()
-b.display()
+
+
+def main():
+	b = Board()
+	b.display()
+
+	return True
+
+
+
+if __name__=='__main__':
+	main()
