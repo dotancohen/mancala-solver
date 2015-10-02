@@ -28,7 +28,7 @@ class Board(object):
 
 
 
-	def display(self):
+	def display(self, show_choose=True):
 
 		g = self.gumot
 		k = self.kupot
@@ -50,7 +50,10 @@ class Board(object):
 		print('|  ^^  |')
 
 		print('+======+======+======+======+======+======+======+======+')
+		if show_choose:
+			print('Choose:     6      5      4      3      2      1')
 		print('  ** ** %s ** **' %(self.player_current, ))
+		print('')
 
 		return True
 
@@ -80,7 +83,7 @@ def main():
 
 	b = Board(players=['Meirav', 'Maayan'], board=test_board)
 
-	b.display()
+	b.display(show_choose=False)
 	b.swap_sides()
 	b.display()
 
