@@ -73,7 +73,15 @@ class Board(object):
 
 
 def main():
-	b = Board()
+
+	test_board = { 'gumot':{}, 'kupot':{'Meirav':9, 'Maayan':7} }
+	for i in range(1,13):
+		test_board['gumot'][i] = i
+
+	b = Board(players=['Meirav', 'Maayan'], board=test_board)
+
+	b.display()
+	b.swap_sides()
 	b.display()
 
 	return True
