@@ -33,21 +33,24 @@ class Board(object):
 		g = self.gumot
 		k = self.kupot
 
+		print('')
+		print('        %s' %(self.player_other, ))
 		print('+======+======+======+======+======+======+======+======+')
 
 		print('|      ', end='')
 		for i in range(7,13):
 			print('|  %02d  ' %g[i], end='')
-		print('|      |')
+		print('|  vv  |')
 
-		print('+  %02d  +------+------+------+------+------+------+  %02d  +' % (k[0],k[1],))
+		print('+  %02d  +------+------+------+------+------+------+  %02d  +' % (k[self.player_other],k[self.player_current],))
 
 		print('|      ', end='')
 		for i in range(6,0,-1):
 			print('|  %02d  ' % g[i], end='')
-		print('|      |')
+		print('|  ^^  |')
 
 		print('+======+======+======+======+======+======+======+======+')
+		print('  ** ** %s ** **' %(self.player_current, ))
 
 		return True
 
