@@ -56,6 +56,22 @@ class Board(object):
 
 
 
+	def swap_sides(self):
+
+		# Swap players
+		self.player_current, self.player_other = self.player_other, self.player_current
+
+		# Swap gumot
+		temp = self.gumot.copy()
+		for i in range(1,7):
+			self.gumot[i] = temp[i+6]
+		for i in range(7,13):
+			self.gumot[i] = temp[i-6]
+
+		return True
+
+
+
 def main():
 	b = Board()
 	b.display()
