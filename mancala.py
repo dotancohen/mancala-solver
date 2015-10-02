@@ -3,18 +3,29 @@
 
 class Board(object):
 	
-	def __init__(self):
+	def __init__(self, players=None, board=None):
 
 		initial_beads = 4
 
-		self.gumot = {}
-		for i in range(1,13): # Twelve gumot, six per player
-			self.gumot[i] = initial_beads
 
-		self.kupot = {
-			0: 0,
-			1: 0
-		}
+		if players==None:
+			self.player_current = 'a'
+			self.player_other = 'b'
+		else:
+			self.player_current = players[0]
+			self.player_other = players[1]
+
+
+		if board==None:
+			self.gumot = {}
+			for i in range(1,13): # Twelve gumot, six per player
+				self.gumot[i] = initial_beads
+
+			self.kupot = { self.player_current: 0, self.player_other: 0 }
+		else:
+			self.gumot = board['gumot']
+			self.kupot = board['kupot']
+
 
 
 	def display(self):
